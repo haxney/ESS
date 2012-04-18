@@ -33,8 +33,7 @@
 
 ;;; Code:
 
-(autoload 'inferior-ess "ess-inf" "Run an ESS process.")
-(autoload 'ess-mode     "ess-mode" "Edit an ESS process.")
+;;; Requires and Autoloads:
 
 (require 'ess-sta-l)
 
