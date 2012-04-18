@@ -168,6 +168,7 @@ can then examine these objects, plot them, and so on.
 (defvar ess-rdired-sort-num nil)        ;silence the compiler.
 ;; but see following defun -- maybe it should be buffer local.
 
+;;;###autoload
 (defun ess-rdired ()
   "Run dired-like mode on R objects.
 This is the main function.  See documentation for `ess-rdired-mode' though
