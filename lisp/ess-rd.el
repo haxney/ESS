@@ -473,6 +473,7 @@ following lines to your `.emacs' file:
            (save-excursion
              (insert after))))))
 
+;;;###autoload
 (defun Rd-preview-help ()
   "Preview the current buffer contents using `Rd-to-help-command'.
 If the current buffer is not associated with a file, create a

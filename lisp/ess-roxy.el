@@ -63,7 +63,6 @@
 
 (require 'ess-custom)
 (require 'hideshow)
-(autoload 'Rd-preview-help "ess-rd" "[autoload]" t)
 
 ;; ------------------
 (defvar ess-roxy-mode-map nil
