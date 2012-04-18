@@ -204,8 +204,6 @@ for ESS, such as icons.")
 ;;;  (add-hook 'ess-mode-hook 'ess-restore-asm-extns)
 ;;;  (add-hook 'inferior-ess-mode-hook 'ess-restore-asm-extns)
 
-(autoload 'Rd-mode "ess-rd" "Major mode for editing R documentation." t)
-
 ;; This is thanks to  Ed L Cashin <ecashin@uga.edu>, 03 Mar 2004 :
 (defun ess-restore-asm-extns ()
   "take away the S-Plus mode association for .s and .S files added by ESS
@@ -452,15 +450,6 @@ sending `inferior-ess-language-start' to S-Plus.")
 ;;; 2.1 Backwards compatibility (roll your own!)
 ;;; What you want S and R to call...
 
-(autoload 'ess-transcript-mode "ess-trns"
-  "Major mode for editing S transcript files." t)
-(autoload 'ess-transcript-clean-region "ess-trns" no-doc t)
-
-(autoload 'ess-rdired "ess-rdired"
-  "View *R* objects in a dired-like buffer." t)
-
-(autoload 'ess-roxy-mode "ess-roxy"
-  "Insert and edit Roxygen tags for function definitions." t)
 ;; if ever ess-roxy works for non- R ess modes, we will have
 ;; (add-hook 'ess-mode-hook 'ess-roxy-mode)
 (add-hook 'R-mode-hook 'ess-roxy-mode)

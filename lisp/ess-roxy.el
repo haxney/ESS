@@ -99,6 +99,7 @@
     (,(concat "^" ess-roxy-str)
      (0 'bold prepend))))
 
+;;;###autoload
 (define-minor-mode ess-roxy-mode
   "Minor mode for editing in-code documentation."
   :lighter " Rox"
