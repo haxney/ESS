@@ -54,6 +54,8 @@
 
 ;;; Code:
 
+;;; Code:
+
 (require 'make-regexp)  ; it's now local to the directory.
 ;;(load-library "make-regexp") ;; this is necessary for
 ;; ado-set-font-lock-keywords
