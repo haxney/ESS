@@ -79,6 +79,7 @@
       (sleep-for sleep-sec))); in addition to timeout-ms
 
 ;; C-c C-v
+;;;###autoload
 (defun ess-display-help-on-object-ddeclient (object)
   "Display the ESS documentation for OBJECT in another window.
 If prefix arg is given, forces a query of the ESS process for the help

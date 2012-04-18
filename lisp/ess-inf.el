@@ -600,6 +600,7 @@ process happens interactively (when possible)."
 
 ;;*;; Multiple process handling code
 
+;;;###autoload
 (defun ess-make-buffer-current nil
   "Make the process associated with the current buffer the current ESS process.
 Returns the name of the process, or nil if the current buffer has none."
@@ -739,6 +740,7 @@ the process selected."
 
 ;;*;;; Commands for switching to the process buffer
 
+;;;###autoload
 (defun ess-switch-to-ESS (eob-p)
   "Switch to the current inferior ESS process buffer.
 With (prefix) EOB-P non-nil, positions cursor at end of buffer.
@@ -868,6 +870,7 @@ Assumes that buffer has not already been in found in current frame."
 
  ; Functions for evaluating code
 
+;;;###autoload
 (defun ess-ddeclient-p ()
   "Returns t iff `ess-local-process-name' is associated with an
 inferior-ess-ddeclient, and nil if the ess-process is running as an
@@ -964,7 +967,7 @@ debugging.  Let-bind it to nil before calling
 `ess-send-string' or `ess-send-region' if no
 removal is necessary.")
 
-
+;;;###autoload
 (defun ess-command (com &optional buf sleep no-prompt-check wait)
   "Send the ESS process command COM and delete the output from
 the ESS process buffer.  If an optional second argument BUF
@@ -1202,6 +1205,7 @@ will be used instead of the default .001s and be passed to
 
 ;;;*;;; Evaluate only
 
+;;;###autoload
 (defun ess-eval-region (start end toggle &optional message)
   "Send the current region to the inferior ESS process.
 With prefix argument toggle the meaning of `ess-eval-visibly-p';
@@ -1244,7 +1248,7 @@ of the buffer until here, i.e. 'point'"))
   (ess-eval-region (point) (point-max) vis "Eval buffer from here ('point') until
 the end of the buffer"))
 
-
+;;;###autoload
 (defun ess-eval-function (vis &optional no-error)
   "Send the current function to the inferior ESS process.
 Arg has same meaning as for `ess-eval-region'.  If NO-ERROR is
@@ -1312,7 +1316,7 @@ Prefix arg VIS toggles visibility of ess-code as for `ess-eval-region'."
       (goto-char (cadr beg-end))
       (ess-next-code-line))))
 
-
+;;;###autoload
 (defun ess-eval-line (vis)
   "Send the current line to the inferior ESS process.
 Arg has same meaning as for `ess-eval-region'."
@@ -1345,6 +1349,7 @@ On success, return 0.  Otherwise, go as far as possible and return -1."
       (setq arg (- arg inc)))
     n))
 
+;;;###autoload
 (defun ess-eval-line-and-step (&optional simple-next even-empty invisibly)
   "Evaluate the current line visibly and step to the \"next\" line.
 \"next\" = the next line with non-comment code _unless_ SIMPLE-NEXT is non-nil,
@@ -1380,6 +1385,7 @@ Evaluate all comments and empty lines."
 
 ;;;*;;; Evaluate and switch to S
 
+;;;###autoload
 (defun ess-eval-region-and-go (start end vis)
   "Send the current region to the inferior S and switch to the process buffer.
 Arg has same meaning as for `ess-eval-region'."
@@ -1394,6 +1400,7 @@ Arg has same meaning as for `ess-eval-region'."
   (ess-eval-buffer vis)
   (ess-switch-to-ESS t))
 
+;;;###autoload
 (defun ess-eval-function-and-go (vis)
   "Send the current function to the inferior ESS process and switch to
 the process buffer. Arg has same meaning as for `ess-eval-region'."
@@ -1401,6 +1408,7 @@ the process buffer. Arg has same meaning as for `ess-eval-region'."
   (ess-eval-function vis)
   (ess-switch-to-ESS t))
 
+;;;###autoload
 (defun ess-eval-line-and-go (vis)
   "Send the current line to the inferior ESS process and switch to the
 process buffer. Arg has same meaning as for `ess-eval-region'."
@@ -2360,6 +2368,7 @@ Returns nil if that file cannot be found, i.e., for R or any non-S language!"
            (and (= (car mod1) (car mod2))
                 (> (car (cdr mod1)) (car (cdr mod2)))))))
 
+;;;###autoload
 (defun ess-get-object-list (name &optional exclude-first)
   "Return a list of current S object names associated with process NAME,
 using `ess-object-list' if that is non-nil.
@@ -2583,6 +2592,7 @@ form completions."
 
 ;;*;; Functions handling the search list
 
+;;;###autoload
 (defun ess-search-list ()
   "Return the current search list as a list of strings.
 Elements which are apparently directories are expanded to full dirnames.
@@ -2690,6 +2700,7 @@ P-STRING is the prompt string."
            ((string= spec "") default)
            (t spec)))))
 
+;;;###autoload
 (defun ess-read-object-name-default ()
   "Return the object name at point, or nil if none."
   (condition-case ()
@@ -2796,8 +2807,7 @@ list."
 ;;321 Commonwealth Road   <kademan@phz.com>
 ;;Wayland, MA 01778
 
-
-
+;;;###autoload
 (defun ess-display-temp-buffer (buff)
   "Display the buffer BUFF using `temp-buffer-show-function' and respecting
 `ess-display-buffer-reuse-frames'."

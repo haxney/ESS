@@ -542,6 +542,7 @@ ess-mode."
 
   ); {end let}
 
+;;;###autoload
 (defun ess-beginning-of-function (&optional no-error)
   "Leave (and return) the point at the beginning of the current ESS function.
 If the optional argument NO-ERROR is non-nil, the function returns nil when
@@ -625,6 +626,7 @@ it cannot find a function beginning."
         (setq done (and (>= end init-point) (<= beg init-point)))))
     beg))
 
+;;;###autoload
 (defun ess-end-of-function (&optional beginning no-error)
   "Leave the point at the end of the current ESS function.
 Optional argument for location of beginning.  Return '(beg end)."
