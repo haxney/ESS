@@ -103,7 +103,7 @@
   :group 'ess
   :prefix "ess-")
 
-(defgroup ess-mouse nil ;; FIXME: this is not used yet <--> ./ess-mous.el
+(defgroup ess-mouse nil
   "ESS: Mouse."
   :group 'ess
   :prefix "ess-")

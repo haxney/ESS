@@ -67,7 +67,7 @@
 
 ;; Tested on Emacs 21.2, 21.3 pretest and XEmacs 21.1.14, using R 1.6.
 
-;; Todo - compare functionality with ess-mouse-me (ess-mous.el).
+;; Todo - compare functionality with ess-mouse-me (ess-mouse.el).
 
 ;; Todo - How to select alternative environments?  Currently only
 ;; shows objects in the .GlobalEnv?  See BrowseEnv() in 1.6.x for way
