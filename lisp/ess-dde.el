@@ -114,6 +114,7 @@ nor offer alternate buffers or editing capability."
 
 
 ;; C-c C-d
+;;;###autoload
 (defun ess-dump-object-ddeclient (object filename)
   "Dump the ESS object OBJECT into file FILENAME."
   (ess-force-buffer-current "Process to load into: ")

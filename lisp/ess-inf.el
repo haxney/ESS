@@ -658,6 +658,7 @@ LANGUAGE (and DIALECT)."
            (error "No ESS processes running; not yet implemented to start (%s,%s)"
                   language dialect)))))
 
+;;;###autoload
 (defun ess-request-a-process (message &optional noswitch ask-if-1)
   "Ask for a process, and make it the current ESS process.
 If there is exactly one process, only ask if ASK-IF-1 is non-nil.
@@ -677,7 +678,7 @@ Returns the name of the selected process."
            (concat " ... request-a-process:\n  "
                    (format
                     "major mode is %s; ess-language: %s, ess-dialect: %s\n"
-                    major-mode ; 'ess-mode; how can we guess R?
+                    major-mode          ; 'ess-mode; how can we guess R?
                     ess-language ess-dialect)))
           (ess-start-process-specific ess-language ess-dialect)
           (ess-write-to-dribble-buffer
@@ -703,7 +704,7 @@ Returns the name of the selected process."
         (ess-show-buffer (buffer-name (process-buffer (get-process proc))) t))
       proc)))
 
-
+;;;###autoload
 (defun ess-force-buffer-current (&optional prompt force no-autostart)
   "Make sure the current buffer is attached to an ESS process.
 If not, or FORCE (prefix argument) is non-nil, prompt for a
@@ -733,6 +734,7 @@ the process selected."
             (setq inferior-ess-help-filetype temp-ess-help-filetype)
             (setq ess-dialect dialect)))))))
 
+;;;###autoload
 (defun ess-switch-process ()
   "Force a switch to a new underlying process."
   (interactive)
@@ -1111,6 +1113,7 @@ Otherwise treat \\ in NEWTEXT string as special:
 ;; and
 ;;      (ess-eval-region   ....)
 
+;;;###autoload
 (defun ess-eval-linewise (text-withtabs &optional
                                         invisibly eob even-empty
                                         wait-last-prompt sleep-sec wait-sec)
@@ -1232,6 +1235,7 @@ this does not apply when using the S-plus GUI, see `ess-eval-region-ddeclient'."
   ;; return value
   (list start end))
 
+;;;###autoload
 (defun ess-eval-buffer (vis)
   "Send the current buffer to the inferior ESS process.
 Arg has same meaning as for `ess-eval-region'."
@@ -1304,7 +1308,7 @@ Prefix arg VIS toggles visibility of ess-code as for `ess-eval-region'."
 ;;       (backward-sexp)
 ;;       (ess-eval-region (point) end vis "Eval sexp"))))
 
-
+;;;###autoload
 (defun ess-eval-function-or-paragraph-and-step (vis)
   "Send the current function if \\[point] is inside one, otherwise the current
 paragraph other to the inferior ESS process.
@@ -1393,6 +1397,7 @@ Arg has same meaning as for `ess-eval-region'."
   (ess-eval-region start end vis)
   (ess-switch-to-ESS t))
 
+;;;###autoload
 (defun ess-eval-buffer-and-go (vis)
   "Send the current buffer to the inferior S and switch to the process buffer.
 Arg has same meaning as for `ess-eval-region'."
@@ -1416,6 +1421,7 @@ process buffer. Arg has same meaning as for `ess-eval-region'."
   (ess-eval-line vis)
   (ess-switch-to-ESS t))
 
+;;;###autoload
 (defun ess-eval-paragraph-and-go (vis)
   "Send the current paragraph to the inferior ESS process and switch to the
 process buffer. Arg has same meaning as for `ess-eval-region'."
@@ -1423,6 +1429,7 @@ process buffer. Arg has same meaning as for `ess-eval-region'."
   (ess-eval-paragraph vis)
   (ess-switch-to-ESS t))
 
+;;;###autoload
 (defun ess-eval-paragraph-and-step (vis)
   "Send the current paragraph to the inferior ESS process and move forward to
 the next paragraph.  Arg has same meaning as for `ess-eval-region'."
@@ -1591,6 +1598,7 @@ the next paragraph.  Arg has same meaning as for `ess-eval-region'."
 (if (string-match "XEmacs" emacs-version)
     (add-hook 'inferior-ess-mode-hook 'inferior-ess-mode-xemacs-menu))
 
+;;;###autoload
 (unless ess-mode-minibuffer-map
   (setq ess-mode-minibuffer-map (make-keymap))
   (set-keymap-parent ess-mode-minibuffer-map minibuffer-local-map)
@@ -2125,6 +2133,7 @@ to the command if BUFF is not given.)"
 
 ;;;*;;; Quitting
 
+;;;###autoload
 (defun ess-quit ()
   "Issue an exiting command to the inferior process, additionally
 also running \\[ess-cleanup].  For R, runs \\[ess-quit-r], see there."
@@ -2321,6 +2330,7 @@ completions are listed [__UNIMPLEMENTED__]."
         ;; always return a non-nil value to prevent history expansions
         (or (comint-dynamic-simple-complete  pattern components) 'none))))
 
+;;;###autoload
 (defun ess-list-object-completions nil
   "List all possible completions of the object name at point."
   (interactive)
@@ -2348,6 +2358,7 @@ directory and has been modified since it was last read."
        (file-directory-p dir)
        (nth 5 (file-attributes dir))))
 
+;;;###autoload
 (defun ess-object-modtime (object)
   "Return the modtime of the S object OBJECT (a string).
 Searches along the search list for a file named OBJECT and returns its modtime
@@ -2361,6 +2372,7 @@ Returns nil if that file cannot be found, i.e., for R or any non-S language!"
       (setq path (cdr path)))
     (nth 5 result)))
 
+;;;###autoload
 (defun ess-modtime-gt (mod1 mod2)
   "Return t if MOD1 is later than MOD2."
   (and mod1
@@ -2690,6 +2702,7 @@ for an object to dump."
 
 ;;;*;;; Routines for reading object names
 
+;;;###autoload
 (defun ess-read-object-name (p-string)
   "Read an S object name from the minibuffer with completion, and return it.
 P-STRING is the prompt string."
