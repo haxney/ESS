@@ -33,6 +33,8 @@
 
 ;;; Code:
 
+;;; Code:
+
 (require 'ess-dde) ;; needed here because we override several definitions
 
 (defun ess-ddeclient-p ()
