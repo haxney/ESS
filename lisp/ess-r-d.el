@@ -954,10 +954,6 @@ See `noweb-mode' and `R-mode' for more help."
 
 (fset 'Snw-mode 'Rnw-mode); just a synonym (for now or ever)
 
-
-(autoload 'ess-transcript-mode "ess-trns"
-  "Major mode for editing S transcript files." t)
-
 (defun R-transcript-mode ()
   "Does the right thing."
   (interactive)
