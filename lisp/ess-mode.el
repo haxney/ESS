@@ -289,6 +289,7 @@
 (if (featurep 'xemacs)
     (add-hook 'ess-mode-hook 'ess-mode-xemacs-menu))
 
+;;;###autoload
 (defun ess-mode (&optional alist proc-name)
   "Major mode for editing ESS source.
 Optional arg ALIST describes how to customize the editing mode.
