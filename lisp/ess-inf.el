@@ -768,6 +768,7 @@ made current."
   (interactive)
   (ess-switch-to-ESS t))
 
+;;;###autoload
 (defun get-ess-buffer (name)
   "Return the buffer associated with the ESS process named by NAME."
   (process-buffer (get-ess-process name)))
@@ -2002,6 +2003,7 @@ If in the output field, goes to the begining of previous input.
       command)
     ))
 
+;;;###autoload
 (defun inferior-ess-get-old-input ()
   "Return the ESS command surrounding point."
   (if comint-use-prompt-regexp
