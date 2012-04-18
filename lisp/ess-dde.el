@@ -35,6 +35,7 @@
 ;; *NO* Requires and autoloads
 
 ;; C-c C-r
+;;;###autoload
 (defun ess-eval-region-ddeclient (start end even-empty)
   "Loop through lines in region and send them to ESS via ddeclient."
   (setq ;; set the following variables for the current ddeESS process.
@@ -66,6 +67,7 @@
     (widen)))
 
 ;; C-c C-n
+;;;###autoload
 (defun ess-eval-linewise-ddeclient (text-withtabs &optional
                                                   invisibly eob even-empty
                                                   sleep-sec)
@@ -76,7 +78,7 @@
     (insert text-withtabs)
     (ess-eval-region-ddeclient (point-min) (point-max) even-empty))
   (if (numberp sleep-sec)
-      (sleep-for sleep-sec))); in addition to timeout-ms
+      (sleep-for sleep-sec)))           ; in addition to timeout-ms
 
 ;; C-c C-v
 ;;;###autoload
@@ -89,6 +91,7 @@ file.  Otherwise just pops to an existing buffer if it exists."
 
 
 ;; C-c C-l
+;;;###autoload
 (defun ess-load-file-ddeclient (filename)
   "Load an S source file into an inferior ESS process; alternate behavior for
 `ess-load-file', required with S-Plus GUI for Windows: Sends the S-Plus command
@@ -154,6 +157,7 @@ file into an emacs buffer and displays it."
     ))
 
 ;; previous version (ESS-5.2.12 and earlier)
+;;;###autoload
 (defun ess-command-ddeclient (com &optional buf sleep)
   "ddeclient bypass of real ess-command"
   (ess-eval-linewise com))

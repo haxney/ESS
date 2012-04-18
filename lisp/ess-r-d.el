@@ -745,8 +745,7 @@ c(get('token', envir = utils:::.CompletionEnv),
     (ess-get-words-from-vector comm)
     ))
 
-
-
+;;;###autoload
 (defun ess-R-complete-object-name ()
   "Completion in R via R's completion utilities (formerly 'rcompgen').
 To be used instead of ESS' completion engine for R versions >= 2.7.0."

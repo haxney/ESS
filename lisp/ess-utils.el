@@ -52,6 +52,7 @@
 
 ;; simple alternative to ess-read-object-name-default of ./ess-inf.el :
 ;; is "wrongly" returning   "p1"  for word "p1.part2" :
+;;;###autoload
 (defun ess-extract-word-name ()
   "Get the word you're on (cheap algorithm). Use `ess-read-object-name-default'
 for a better but slower version."
@@ -426,6 +427,7 @@ This function will work even if LIST is unsorted.  See also `uniq'."
       (setq list (setcdr list (funcall predicate (car list) (cdr list))))))
   list)
 
+;;;###autoload
 (defun ess-uniq-list (items)
   "Delete all duplicate entries in ITEMS list, calling `ess-unique'."
   (ess-unique items 'delete))

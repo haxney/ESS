@@ -185,6 +185,7 @@ otherwise call devSource."
       (ess--developer-command comm 'ess--developer-propertize-output)
       )))
 
+;;;###autoload
 (defun ess-developer-send-function (proc beg end name &optional visibly message tracebug)
   (save-excursion
     (if (null ess-developer-packages)

@@ -224,6 +224,7 @@ is not already."
         (goto-char (point-max))
         (ess-eval-linewise input)))))
 
+;;;###autoload
 (defun ess-transcript-send-command-and-move ()
   "Send the command on this line, and move point to the next command."
   (interactive)
