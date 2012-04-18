@@ -761,6 +761,7 @@ made current."
     (message "No inferior ESS process")
     (ding)))
 
+;;;###autoload
 (defun ess-switch-to-end-of-ESS ()
   "Switch to the end of the inferior ESS process buffer."
   (interactive)

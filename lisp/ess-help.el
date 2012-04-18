@@ -617,6 +617,7 @@ For internal use. Used in `ess-display-help-on-object',
         )
   "Menu used in ess-help mode.")
 
+;;;###autoload
 (defun ess-help-mode ()
 ;;; Largely ripped from more-mode.el,
 ;;; originally by Wolfgang Rupprecht wolfgang@mgm.mit.edu
@@ -804,6 +805,7 @@ the latter and return it.  Otherwise, return `ess-help-topics-list'."
                              (format "names(%s(\"%s\"))\n" readrds a-file)))))
                    (ess-get-words-from-vector "searchpaths()\n")))))
 
+;;;###autoload
 (defun ess-nuke-help-bs ()
   "Remove ASCII underlining and overstriking performed by ^H codes."
   ;; This function is a modification of nuke-nroff-bs in man.el from the
