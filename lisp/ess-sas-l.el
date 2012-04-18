@@ -57,8 +57,6 @@
 
 (ess-message "[ess-sas-l:] (autoload ..) (def** ..) etc ...")
 
-(autoload 'ess-transcript-mode "ess-trns" "ESS source eval mode." t)
-
 (put 'ess-transcript-minor-mode 'permanent-local t)
 (or (assq 'ess-transcript-minor-mode minor-mode-alist)
     (setq minor-mode-alist
