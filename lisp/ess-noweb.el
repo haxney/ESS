@@ -37,8 +37,6 @@
  ; Requires and autoloads
 
 (require 'noweb-mode)
-;; still needed when user turns font-lock-mode *on* (from initial off):
-(autoload 'noweb-font-lock-mode "noweb-font-lock-mode")
 
  ; Variables
 

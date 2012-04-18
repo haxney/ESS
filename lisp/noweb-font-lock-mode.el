@@ -168,7 +168,7 @@ See NOWEB-FONT-LOCK-MODE."
   (noweb-font-lock-mode arg))
 
 ;; Here we get to the meat of the problem
-
+;;;###autoload
 (defun noweb-font-lock-mode ( &optional arg)
   "Minor mode for syntax highlighting when using noweb-mode to edit noweb files.
 Each chunk is fontified in accordance with its own mode"
