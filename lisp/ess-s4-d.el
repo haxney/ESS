@@ -34,7 +34,7 @@
 
 ;;; Code:
 
-(autoload 'inferior-ess "ess-inf" "Run an ESS process.")
+;;; Autoloads:
 
 (require 'ess-s-l)
 
