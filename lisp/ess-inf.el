@@ -79,6 +79,7 @@
 
 ;;*;; Starting a process
 
+;;;###autoload
 (defun ess-proc-name (n name)
   "Return name of process N, as a string, with NAME prepended.
 If ess-plain-first-buffername, then initial process is number-free."
