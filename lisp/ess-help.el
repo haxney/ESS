@@ -724,6 +724,7 @@ Keystroke    Section
               (substitute-command-keys
                "\\{ess-help-sec-map}")))))
 
+;;;###autoload
 (defun ess-helpobjs-at-point (&optional slist)
   ;;; Return a list (def obj fun) where OBJ is a name at point, FUN - name of
   ;;; the function call point is in. DEF is either OBJ or FUN (in that order)
